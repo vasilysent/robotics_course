@@ -1,0 +1,13 @@
+# Python packages for the MDK practical assignment.
+# Installed into the conda environment defined in environment.yml.
+
+mujoco==3.10.0
+numpy>=1.26,<3
+pyyaml>=6.0
+
+# Writing the recorded runs as mp4. The ffmpeg extra brings a bundled ffmpeg
+# binary, so nothing has to be installed by hand.
+imageio[ffmpeg]>=2.34
+
+# Plotting the tracking error of a recorded run.
+matplotlib>=3.8

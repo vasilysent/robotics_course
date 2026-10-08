@@ -1,0 +1,12 @@
+name: mdk-assignment
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11
+  - pip
+  # Installs this project in editable mode, which pulls in the dependencies
+  # listed in requirements.txt.
+  - pip:
+      - -e .

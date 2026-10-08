@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mdk-assignment"
+version = "0.1.0"
+description = "MDK practical assignment: geometric kinematics and control of a UR5e arm"
+requires-python = ">=3.11"
+dynamic = ["dependencies"]
+
+# The dependencies live in requirements.txt, which stays the single place to
+# edit them.
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# The kinematic description ships with the package, so it can be located
+# relative to the code rather than to the current working directory.
+[tool.setuptools.package-data]
+"assignment.student" = ["*.yaml"]

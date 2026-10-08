@@ -1,0 +1,84 @@
+# Kinematic description of the UR5e arm.
+#
+# Notation
+#   H_i^j          relative pose of frame Psi_i w.r.t. frame Psi_j, a 4x4 homogeneous
+#                  matrix given row by row
+#   T = (w, v)     geometric twist, angular part w first, linear part v second
+#
+# Convention
+#   Links are numbered 0..n, joints 1..n. Joint i connects link i-1 (its parent)
+#   to link i (its child).
+#
+#   Joint twists are expressed in the CHILD link frame Psi_i, hence the relative
+#   pose of two adjacent links follows the kinematic pair relation
+#
+#       H_i^{i-1}(q^i) = H_i^{i-1}(0) . exp( q^i * tilde(T_i^{i,i-1}) ).
+#
+#   Frame Psi_0 is not used to express any unit twist; it is located by H_0_w.
+#   Likewise Psi_ee is an extra frame rigidly attached to link n, located
+#   by H_ee_n.
+
+
+name: ur5e
+units:
+  length: m
+  angle: rad
+
+# H_0^w : pose of the base frame Psi_0 in the world frame
+H_0_w: [[1, 0, 0, 0],
+        [0, 1, 0, 0],
+        [0, 0, 1, 0],
+        [0, 0, 0, 1]]
+
+# Joints 1..n, ordered from base to tip.
+#   H_ref      : H_i^{i-1}(0), relative pose of adjacent links at q = 0
+#   unit_twist : T_i^{i,i-1} = (w, v), unit twist of joint i expressed in Psi_i
+joints:
+
+  - name: shoulder_pan
+    H_ref: [[1, 0, 0, 0],
+            [0, 1, 0, 0],
+            [0, 0, 1, 0],
+            [0, 0, 0, 1]]
+    unit_twist: [0, 0, 0, 0, 0, 0]
+
+  - name: shoulder_lift
+    H_ref: [[1, 0, 0, 0],
+            [0, 1, 0, 0],
+            [0, 0, 1, 0],
+            [0, 0, 0, 1]]
+    unit_twist: [0, 0, 0, 0, 0, 0]
+
+  - name: elbow
+    H_ref: [[1, 0, 0, 0],
+            [0, 1, 0, 0],
+            [0, 0, 1, 0],
+            [0, 0, 0, 1]]
+    unit_twist: [0, 0, 0, 0, 0, 0]
+
+  - name: wrist_1
+    H_ref: [[1, 0, 0, 0],
+            [0, 1, 0, 0],
+            [0, 0, 1, 0],
+            [0, 0, 0, 1]]
+    unit_twist: [0, 0, 0, 0, 0, 0]
+
+  - name: wrist_2
+    H_ref: [[1, 0, 0, 0],
+            [0, 1, 0, 0],
+            [0, 0, 1, 0],
+            [0, 0, 0, 1]]
+    unit_twist: [0, 0, 0, 0, 0, 0]
+
+  - name: wrist_3
+    H_ref: [[1, 0, 0, 0],
+            [0, 1, 0, 0],
+            [0, 0, 1, 0],
+            [0, 0, 0, 1]]
+    unit_twist: [0, 0, 0, 0, 0, 0]
+
+# H_ee^n : pose of the end-effector frame Psi_ee relative to the last link frame Psi_n.
+H_ee_n: [[1, 0, 0, 0],
+         [0, 1, 0, 0],
+         [0, 0, 1, 0],
+         [0, 0, 0, 1]]
