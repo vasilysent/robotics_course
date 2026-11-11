@@ -2,7 +2,7 @@
 
 The goal of this assignment is to make the end-effector of a robot arm track the full 6D pose of a moving target. You will do so for a Universal Robots UR5e arm simulated in the MuJoCo physics engine, and along the way you will build a small Python library for the geometric kinematics and control of serial-chain robots.
 
-The full assignment — the tasks and the submission — is described in `assignment.pdf`. This README repeats its introduction and serves as a quick reference for setting up the project and running the scripts.
+The full assignment — the tasks and the submission — is described in [`assignment.pdf`](assignment.pdf). This README repeats its introduction and serves as a quick reference for setting up the project and running the scripts.
 
 ## Introduction
 
@@ -49,7 +49,7 @@ The commands below are typed into a terminal; we recommend the one built into th
 
 Go to <https://github.com/vasilysent/robotics_course>, click the green **Code** button and then **Download ZIP**. Unzip the downloaded file and copy the `assignment` folder to a convenient location.
 
-Open the `assignment` **folder** — the one containing `README.md` and `environment.yml` — with *File → Open Folder* in VS Code or *File → Open* in PyCharm. Then open a terminal inside the IDE: *Terminal → New Terminal* in VS Code, or the *Terminal* tab at the bottom of the PyCharm window. That terminal starts in the project folder. Check that it is the right one — the listing must contain `environment.yml`:
+Open the [`assignment`](../assignment) **folder** — the one containing `README.md` and `environment.yml` — with *File → Open Folder* in VS Code or *File → Open* in PyCharm. Then open a terminal inside the IDE: *Terminal → New Terminal* in VS Code, or the *Terminal* tab at the bottom of the PyCharm window. That terminal starts in the project folder. Check that it is the right one — the listing must contain `environment.yml`:
 
 ```bash
 ls        # macOS / Linux
